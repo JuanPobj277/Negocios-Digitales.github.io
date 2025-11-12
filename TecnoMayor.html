@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnoMayor - Asistencia Digital Confiable</title>
+    <style>
+        /* --- Estilos Generales --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+
+        /* --- Header y Navegación --- */
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        header nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+        }
+
+        header nav a.cta-button {
+            background-color: #e67e22;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        /* --- Fase 1: Atracción (Hero Section) --- */
+        /* Inspirado en el tema oscuro de tu Gantt [cite: 98] */
+        #hero {
+            background-color: #2c3e50; /* Color oscuro */
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        #hero h1 {
+            color: #fff;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        #hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #ecf0f1;
+        }
+
+        #hero .cta-button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        #hero .cta-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* --- Fase 2: Interés (Promise Section) --- */
+        #promise {
+            background-color: #fff;
+            text-align: center;
+        }
+        
+        #promise h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .promise-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Para responsividad */
+        }
+
+        .promise-item {
+            width: 30%;
+            min-width: 280px;
+            padding: 20px;
+        }
+
+        .promise-item .icon {
+            font-size: 48px;
+            color: #3498db;
+        }
+
+        .promise-item h3 {
+            font-size: 22px;
+            margin-top: 15px;
+        }
+
+        /* --- Fase 3: Decisión (Plans Section) --- */
+        #plans {
+            text-align: center;
+        }
+
+        #plans h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .plans-grid {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap; /* Para responsividad */
+        }
+
+        .plan {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 30%;
+            min-width: 290px;
+            margin: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column; /* Para alinear el botón al fondo */
+        }
+
+        /* Destacar Plan Plus [cite: 184] */
+        .plan.recommended {
+            border-top: 5px solid #3498db;
+            transform: scale(1.05);
+        }
+
+        .plan h3 {
+            font-size: 22px;
+            color: #3498db;
+        }
+
+        .plan .price {
+            font-size: 38px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 20px 0;
+        }
+
+        .plan .price span {
+            font-size: 16px;
+            font-weight: normal;
+            color: #777;
+        }
+
+        .plan ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-bottom: 30px;
+            flex-grow: 1; /* Empuja el botón al fondo */
+        }
+
+        .plan ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .plan ul li::before {
+            content: '✔';
+            color: #2ecc71;
+            margin-right: 10px;
+        }
+
+        .plan .plan-button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .plan .plan-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* --- Fase 4: Acción (CTA/Form Section) --- */
+        #cta {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        #cta h2 {
+            color: #fff;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        #cta form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        #cta input[type="text"],
+        #cta input[type="email"] {
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #cta button {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #cta button:hover {
+            background-color: #e67e22;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #2c3e50;
+            color: #aaa;
+            margin-top: 40px;
+        }
+
+        /* --- Media Query para Responsividad --- */
+        @media (max-width: 768px) {
+            .promise-grid, .plans-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .promise-item, .plan {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+
+            .plan.recommended {
+                transform: scale(1); /* Desactivar zoom en móvil */
+            }
+
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">TecnoMayor</div>
+        <nav>
+            <a href="#promise">Nuestra Promesa</a>
+            <a href="#plans">Planes</a>
+            <a href="#cta">Contacto</a>
+            <a href="#" class="cta-button">Portal de Cliente</a>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="hero">
+            <div class="container">
+                <h1>Tranquilidad para ti, independencia digital para ellos.</h1>
+                <p>Asistencia tecnológica paciente y personalizada para adultos mayores. Conecta a tus padres con la confianza que merecen.</p>
+                <a href="#plans" class="cta-button">Ver Nuestros Planes</a>
+            </div>
+        </section>
+
+        <section id="promise" class="container">
+            <h2>No somos un soporte técnico, somos un compañero</h2>
+            <div class="promise-grid">
+                <div class="promise-item">
+                    <div class="icon">❤️</div>
+                    <h3>Paciencia Ilimitada</h3>
+                    <p>Nuestros asistentes están capacitados para guiar sin prisa, repitiendo los pasos las veces que sean necesarias.</p>
+                </div>
+                <div class="promise-item">
+                    <div class="icon">🗣️</div>
+                    <h3>Comunicación Empática</h3>
+                    <p>Hablamos claro y en lenguaje sencillo. Traducimos la tecnología sin tecnicismos complicados.</p>
+                </div>
+                <div class="promise-item">
+                    <div class="icon">🔒</div>
+                    <h3>Confianza Total</h3>
+                    <p>Construimos una relación segura con el adulto mayor, protegiendo su privacidad y dándoles seguridad.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="plans" class="container">
+            <h2>Planes diseñados para tu tranquilidad</h2>
+            <div class="plans-grid">
+                <div class="plan">
+                    <h3>Plan Básico 10</h3>
+                    <div class="price">$115 <span>/ mes</span></div>
+                    <ul>
+                        <li>10 llamadas de asistencia</li>
+                        <li>Asistencia remota</li>
+                        <li>Soporte vía WhatsApp</li>
+                    </ul>
+                    <a href="#cta" class="plan-button">Contratar Ahora</a>
+                </div>
+                <div class="plan recommended"> <h3>Plan Plus</h3>
+                    <div class="price">$230 <span>/ mes</span></div>
+                    <ul>
+                        <li>Llamadas ilimitadas</li>
+                        <li>Asistencia remota</li>
+                        <li>3 tutorías proactivas al mes</li>
+                        <li>Configuración de dispositivos</li>
+                    </ul>
+                    <a href="#cta" class="plan-button">Elegir Plan Plus</a>
+                </div>
+                <div class="plan">
+                    <h3>Plan Único</h3>
+                    <div class="price">$75 <span>/ pago único</span></div>
+                    <ul>
+                        <li>Configuración inicial</li>
+                        <li>1 sesión</li>
+                        <li>Instalación de app</li>
+                    </ul>
+                    <a href="#cta" class="plan-button">Contratar Ahora</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta">
+            <div class="container">
+                <h2>Empieza Hoy Mismo</h2>
+                <p>Déjanos tus datos y un asesor te contactará para registrar a tu familiar.</p>
+                <form>
+                    <input type="text" placeholder="Tu Nombre (Familiar)" required>
+                    <input type="email" placeholder="Tu Correo Electrónico" required>
+                    <input type="text" placeholder="Teléfono" required>
+                    <input type="text" placeholder="Comentarios" required>
+                    <button type="submit">Solicitar Información</button>
+                </form>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 TecnoMayor. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
